@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Welcome">
+  <section class="hero relative h-[80vh] flex items-center">
+    <div class="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center opacity-50"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-2xl">
+        <h1 class="font-display text-5xl md:text-7xl text-rosita-terra mb-6">
+          Latin Flavors Meet Brunch Perfection
+        </h1>
+        <p class="font-body text-xl mb-8">
+          Experience the vibrant taste of Latin American breakfast cuisine in a modern, welcoming atmosphere.
+        </p>
+        <a href="/menu" class="inline-block bg-rosita-terra text-white font-body px-8 py-3 rounded-lg hover:bg-rosita-orange transition-colors">
+          View Our Menu
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="text-center">
+          <div class="w-20 h-20 mx-auto mb-6">
+            <img src="/images/breakfast.svg" alt="Breakfast Icon" class="w-full h-full" />
+          </div>
+          <h3 class="font-display text-2xl mb-4">Signature Brunch</h3>
+          <p class="font-body">Start your day with our creative twist on classic Latin breakfast dishes.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-20 h-20 mx-auto mb-6">
+            <img src="/images/cocktail.svg" alt="Cocktail Icon" class="w-full h-full" />
+          </div>
+          <h3 class="font-display text-2xl mb-4">Craft Cocktails</h3>
+          <p class="font-body">Sip on our carefully crafted morning cocktails and fresh-pressed juices.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-20 h-20 mx-auto mb-6">
+            <img src="/images/venue.svg" alt="Venue Icon" class="w-full h-full" />
+          </div>
+          <h3 class="font-display text-2xl mb-4">Event Venue</h3>
+          <p class="font-body">Host your special events in our versatile and charming space.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

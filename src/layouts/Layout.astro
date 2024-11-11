@@ -1,0 +1,83 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+const navItems = [
+  { name: 'Home', path: '/' },
+  { name: 'Menu', path: '/menu' },
+  { name: 'Catering', path: '/catering' },
+  { name: 'Venue', path: '/venue' },
+  { name: 'Blog', path: '/blog' },
+  { name: 'Contact', path: '/contact' }
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Rosita's Cafe - Latin Brunch & Event Venue" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | Rosita's Cafe</title>
+  </head>
+  <body class="bg-rosita-cream">
+    <header class="bg-white shadow-md">
+      <nav class="container mx-auto px-4 py-6">
+        <div class="flex justify-between items-center">
+          <a href="/" class="flex items-center gap-4">
+            <img src="/images/logo.svg" alt="Rosita's Cafe Logo" class="w-12 h-12" />
+            <span class="text-3xl font-display font-bold text-rosita-terra">Rosita's Cafe</span>
+          </a>
+          <ul class="hidden md:flex space-x-8">
+            {navItems.map(item => (
+              <li>
+                <a href={item.path} class="font-body text-rosita-blue hover:text-rosita-terra transition-colors">
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
+    </header>
+    
+    <main>
+      <slot />
+    </main>
+
+    <footer class="bg-rosita-terra text-white mt-20">
+      <div class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <div class="flex items-center gap-4 mb-4">
+              <img src="/images/logo.svg" alt="Rosita's Cafe Logo" class="w-12 h-12 brightness-200" />
+              <h3 class="font-display text-2xl">Rosita's Cafe</h3>
+            </div>
+            <p class="font-body">123 Latin Quarter<br/>Your City, ST 12345</p>
+          </div>
+          <div>
+            <h3 class="font-display text-2xl mb-4">Hours</h3>
+            <p class="font-body">
+              Tuesday - Friday: 8am - 3pm<br/>
+              Saturday - Sunday: 9am - 4pm<br/>
+              Monday: Closed
+            </p>
+          </div>
+          <div>
+            <h3 class="font-display text-2xl mb-4">Contact</h3>
+            <p class="font-body">
+              Phone: (555) 123-4567<br/>
+              Email: hola@rositascafe.com
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
